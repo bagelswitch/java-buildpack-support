@@ -57,6 +57,7 @@ public class ApplicationStartupFailureDetectingLifecycleListener implements Life
      */
     @Override
     public void lifecycleEvent(LifecycleEvent event) {
+        System.out.println("***** Got container lifecycle event: " + event.getType());
         if (event.getType() == Lifecycle.AFTER_START_EVENT) {
             Container host = (Container) event.getLifecycle();
             Container[] contexts = host.findChildren();
